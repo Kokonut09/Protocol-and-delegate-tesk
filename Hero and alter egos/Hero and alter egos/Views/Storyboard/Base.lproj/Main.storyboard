@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a8W-q0-CFb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Heros Collection View Controller-->
+        <scene sceneID="PnL-Gq-aoS">
+            <objects>
+                <collectionViewController id="FS9-m6-Wmk" customClass="HerosCollectionViewController" customModule="Hero_and_alter_egos" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IWf-0x-bks">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NHk-zw-NNc">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="heroCell" id="TyD-Qy-f3h" customClass="AlterEgoTableViewCell" customModule="Hero_and_alter_egos" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="kWk-4E-JQI">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G09-G8-meH">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="G09-G8-meH" firstAttribute="top" secondItem="kWk-4E-JQI" secondAttribute="top" id="4PE-00-Axz"/>
+                                        <constraint firstAttribute="bottom" secondItem="G09-G8-meH" secondAttribute="bottom" id="ARt-CL-xLM"/>
+                                        <constraint firstItem="G09-G8-meH" firstAttribute="leading" secondItem="kWk-4E-JQI" secondAttribute="leading" id="CPC-QK-Lkc"/>
+                                        <constraint firstAttribute="trailing" secondItem="G09-G8-meH" secondAttribute="trailing" id="Tnc-Og-dvN"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="heroImageView" destination="G09-G8-meH" id="y8c-uT-fpv"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="FS9-m6-Wmk" id="eiB-U1-15v"/>
+                            <outlet property="delegate" destination="FS9-m6-Wmk" id="CU7-va-aBF"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="H1l-rh-FK4">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="line.horizontal.3.decrease" catalog="system" id="TDl-mi-Xax">
+                            <connections>
+                                <segue destination="PhI-aM-8qB" kind="presentation" id="rXB-Qz-Gio"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O33-C3-NHH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.57971014492762" y="123.88392857142857"/>
+        </scene>
+        <!--Alter Ego View Controller-->
+        <scene sceneID="HKW-dj-oz4">
+            <objects>
+                <viewController id="PhI-aM-8qB" customClass="AlterEgoViewController" customModule="Hero_and_alter_egos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A6F-CB-nCd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bww-oM-rg9">
+                                <rect key="frame" x="379.5" y="8" width="26.5" height="22"/>
+                                <state key="normal" image="chevron.down" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButtonPressed:" destination="PhI-aM-8qB" eventType="touchUpInside" id="bMA-oR-APn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero/Alter Ego Switcher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3c-bh-Ild">
+                                <rect key="frame" x="20" y="58" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="c6p-Hl-MxB">
+                                <rect key="frame" x="30" y="122" width="354" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero / Alter Ego" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1M-mR-N4A">
+                                        <rect key="frame" x="0.0" y="0.0" width="248" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G0J-d7-YUt">
+                                        <rect key="frame" x="305" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="heroSwitchTapped:" destination="PhI-aM-8qB" eventType="valueChanged" id="Ayd-qw-Um6"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xqe-IA-rH1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xqe-IA-rH1" firstAttribute="trailing" secondItem="V3c-bh-Ild" secondAttribute="trailing" constant="20" id="DHM-9e-dxG"/>
+                            <constraint firstItem="c6p-Hl-MxB" firstAttribute="leading" secondItem="Xqe-IA-rH1" secondAttribute="leading" constant="30" id="EbI-Ju-V4t"/>
+                            <constraint firstItem="V3c-bh-Ild" firstAttribute="leading" secondItem="Xqe-IA-rH1" secondAttribute="leading" constant="20" id="Tma-Xk-yff"/>
+                            <constraint firstItem="V3c-bh-Ild" firstAttribute="top" secondItem="bww-oM-rg9" secondAttribute="bottom" constant="28" id="Xd3-jY-5EL"/>
+                            <constraint firstItem="c6p-Hl-MxB" firstAttribute="centerX" secondItem="Xqe-IA-rH1" secondAttribute="centerX" id="c4X-cA-O40"/>
+                            <constraint firstItem="V3c-bh-Ild" firstAttribute="centerX" secondItem="Xqe-IA-rH1" secondAttribute="centerX" id="fDC-RE-Vef"/>
+                            <constraint firstItem="Xqe-IA-rH1" firstAttribute="trailing" secondItem="bww-oM-rg9" secondAttribute="trailing" constant="8" id="mZd-6Q-MJi"/>
+                            <constraint firstItem="Xqe-IA-rH1" firstAttribute="trailing" secondItem="c6p-Hl-MxB" secondAttribute="trailing" constant="30" id="tRb-hz-WrM"/>
+                            <constraint firstItem="c6p-Hl-MxB" firstAttribute="top" secondItem="V3c-bh-Ild" secondAttribute="bottom" constant="28" id="vDO-7H-gPB"/>
+                            <constraint firstItem="bww-oM-rg9" firstAttribute="top" secondItem="Xqe-IA-rH1" secondAttribute="top" constant="8" id="zmQ-H3-6PJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="settingSwitch" destination="G0J-d7-YUt" id="quq-Rv-QZg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVt-S5-sEO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1360.8695652173915" y="123.88392857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hip-fW-PYU">
+            <objects>
+                <navigationController id="a8W-q0-CFb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ks2-eu-4Mi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FS9-m6-Wmk" kind="relationship" relationship="rootViewController" id="dHh-Tk-PRt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NEy-lY-nHf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119" y="124"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
